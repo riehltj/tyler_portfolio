@@ -58,7 +58,7 @@ export PORTFOLIO_PASS="your_secure_password"
 bin/dev
 ```
 
-##Usage
+## Usage
 
 - Browse projects on the home page
 - Use the search bar to filter projects by title, tags, and tech stack
