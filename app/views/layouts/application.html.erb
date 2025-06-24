@@ -1,18 +1,25 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TylerPortfolio</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Tyler Riehl — Full Stack Ruby on Rails Developer</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="description" content="Personal portfolio of Tyler Riehl showcasing projects built with Ruby on Rails, Hotwire, React, and more." />
+    <meta name="author" content="Tyler Riehl" />
+    <meta name="keywords" content="Ruby on Rails, Portfolio, Full Stack Developer, Hotwire, Stimulus, React, Tailwind CSS, PostgreSQL" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="<%= asset_path('favicon.ico') %>" type="image/x-icon" />
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="bg-white">
       <%= yield %>
     </main>
   </body>

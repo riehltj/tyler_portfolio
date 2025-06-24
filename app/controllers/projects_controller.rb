@@ -55,6 +55,7 @@ class ProjectsController < ApplicationController
       :role,
       :category,
       :demo_type,
+      :demo_image,
       :slug,
       :content,
       tags: [],
