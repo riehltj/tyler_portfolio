@@ -4,9 +4,9 @@ class ApplicationController < ActionController::Base
   def authenticate_admin!
     return if admin_whitelisted?
 
-    unless admin_credentials_valid?
-      request_http_basic_authentication("Admin Area")
-    end
+    return if admin_credentials_valid?
+
+    request_http_basic_authentication('Admin Area')
   end
 
   def admin_authenticated?
@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_credentials_valid?
-    authenticate_with_http_basic do |username, password|
-      username == ENV["PORTFOLIO_USER"] && password == ENV["PORTFOLIO_PASS"]
-    end.present?
+    authenticate_or_request_with_http_basic('Admin Area') do |username, password|
+      username == ENV['PORTFOLIO_USER'] && password == ENV['PORTFOLIO_PASS']
+    end
   end
 end
