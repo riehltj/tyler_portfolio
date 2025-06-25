@@ -73,3 +73,4 @@ end
 gem 'friendly_id', '~> 5.4.0'
 gem 'ransack'
 gem "lucide-rails", "~> 0.1.1"
+gem "ostruct"

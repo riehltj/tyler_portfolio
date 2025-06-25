@@ -27,4 +27,13 @@ class Project < ApplicationRecord
   def image?
     demo_type == 'image'
   end
+
+  # Converts comma-separated tag string into array and vice versa
+  def tags_string
+    tags&.join(", ")
+  end
+
+  def tags_string=(value)
+    self.tags = value.split(",").map(&:strip).reject(&:blank?)
+  end
 end
