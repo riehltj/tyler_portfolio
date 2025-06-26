@@ -1,0 +1,9 @@
+<%= turbo_stream.append :projects do %>
+  <%= render partial: 'card', collection: @projects, as: :project %>
+<% end %>
+
+<% if @pagy.next.present? %>
+  <%= turbo_stream.replace :next_page do %>
+    <%= turbo_frame_tag :next_page, src: projects_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+  <% end %>
+<% end %>

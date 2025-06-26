@@ -1,5 +1,7 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   helper_method :admin_authenticated?
+  
 
   def authenticate_admin!
     return if admin_whitelisted?
@@ -10,8 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def admin_authenticated?
-    false
-    # admin_whitelisted? || admin_credentials_valid?
+    admin_whitelisted? || admin_credentials_valid?
   end
 
   private

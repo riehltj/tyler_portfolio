@@ -1,13 +1,10 @@
 class ProjectsController < ApplicationController
-  before_action :authenticate_admin!, except: [:index, :show]
-  before_action :set_project, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admin!, except: :index
+  before_action :set_project, only: [:edit, :update, :destroy]
 
   def index
     @q = Project.ransack(params[:q])
-    @projects = @q.result.order(featured: :desc, created_at: :desc)
-  end
-
-  def show
+    @pagy, @projects = pagy(@q.result.order(featured: :desc, created_at: :desc))
   end
 
   def new
@@ -18,18 +15,17 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
 
     if @project.save
-      redirect_to @project, notice: "Project was successfully created."
+      redirect_to projects_path, notice: "Project was successfully created."
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def edit
-  end
+  def edit;end
 
   def update
-    if @project.update(project_params)
-      redirect_to @project, notice: "Project was successfully updated."
+    if @project.update!(project_params)
+      redirect_to projects_path, notice: "Project was successfully created."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -58,7 +54,7 @@ class ProjectsController < ApplicationController
       :demo_image,
       :slug,
       :content,
-      tags: [],
+      :tags_string,
       tech_stack: []
     )
   end

@@ -1,7 +1,7 @@
-<aside class="sticky top-0 left-0 w-full h-screen overflow-hidden p-6 flex flex-col items-center shadow-xl bg-teal-900 text-white">
-  <%= image_tag "headshot.webp", alt: "Tyler Riehl Headshot", class: "w-24 h-24 rounded-full object-cover mb-4" %>
-  <h2 class="text-2xl font-semibold mb-2">Tyler Riehl</h2>
-  <ul class="text-sm flex flex-col gap-4 text-center">
+<aside class="sticky top-0 left-0 w-full h-fit md:h-screen overflow-hidden p-6 flex flex-col items-center gap-2 md:gap-8 shadow-xl bg-teal-900 text-white">
+  <%= image_tag "headshot.webp", alt: "Tyler Riehl Headshot", class: "w-24 h-24 rounded-full object-cover" %>
+  <h2 class="text-2xl font-semibold">Tyler Riehl</h2>
+  <ul class="text-sm flex flex-col gap-2 md:gap-8 text-center">
     <%= render 'shared/icon_with_link', icon_name: 'smartphone', link_ref: 'tel:+14405377166', text: '(440) 537-7162' %>
     <%= render 'shared/icon_with_link', icon_name: 'mail', link_ref: 'mailto:Tyler.Riehl16@gmail.com', text: 'Tyler.Riehl16@gmail.com' %>
     <%= render 'shared/icon_with_link', icon_name: 'linkedin', link_ref: 'https://www.linkedin.com/in/tylerriehl2016', text: 'LinkedIn Profile' %>

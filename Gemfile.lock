@@ -180,6 +180,7 @@ GEM
     nokogiri (1.18.8-x86_64-linux-musl)
       racc (~> 1.4)
     ostruct (0.6.2)
+    pagy (9.3.4)
     pg (1.5.9)
     pp (0.6.2)
       prettyprint
@@ -315,6 +316,7 @@ DEPENDENCIES
   jbuilder
   lucide-rails (~> 0.1.1)
   ostruct
+  pagy (~> 9.3)
   pg (~> 1.1)
   puma (>= 5.0)
   rails (~> 7.1.5, >= 7.1.5.1)

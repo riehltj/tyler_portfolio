@@ -15,6 +15,7 @@ class Project < ApplicationRecord
   React
   Stimulus
   Hotwire
+  GoogleMaps
   PostgreSQL
   Tailwind
   Stripe

@@ -10,6 +10,11 @@
   </div>
 
   <div>
+    <%= form.label :content, class: "label-default" %>
+    <%= form.rich_text_area :content, class: "input-default" %>
+  </div>
+
+  <div>
     <%= form.label :demo_video_url, class: "label-default" %>
     <%= form.text_field :demo_video_url, class: "input-default" %>
   </div>
@@ -36,7 +41,7 @@
 
   <div>
     <%= form.label :demo_type, class: "label-default" %>
-    <%= form.text_field :demo_type, class: "input-default" %>
+    <%= form.select :demo_type, options_for_select(["video", "image"], project.demo_type), {}, class: "input-default" %>
   </div>
 
   <div>
@@ -57,7 +62,7 @@
   </div>
 
   <div>
-    <%= form.label :tags, class: "label-default" %>
+    <%= form.label :tags_string, class: "label-default" %>
     <%= form.text_field :tags_string, value: project.tags&.join(", "), class: "input-default", placeholder: "e.g. open source, featured, backend" %>
   </div>
 
