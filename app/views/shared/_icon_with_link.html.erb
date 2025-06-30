@@ -1,4 +1,4 @@
-<%= link_to link_ref, class: 'flex items-center gap-2 px-6 py-2 border-solid border rounded-md hover:!bg-white hover:text-black hover:cursor-pointer', target: '_blank' do %>
+<%= link_to link_ref, download: local_assigns[:download], class: 'flex items-center gap-2 px-6 py-2 border-solid border rounded-md hover:!bg-white hover:text-black hover:cursor-pointer', target: '_blank' do %>
   <%= lucide_icon(icon_name) %>
   <span><%= text %></span>
 <% end %>
