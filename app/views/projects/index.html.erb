@@ -12,7 +12,6 @@
 
     <div class="flex justify-between items-center">
       <h1 class="font-bold text-4xl">Projects/Features</h1>
-      <%= link_to "New project", new_project_path, class: "rounded-md px-3.5 py-2.5 bg-teal-800 text-white" if admin_authenticated? %>
     </div>
 
     <%= render partial: 'card', collection: @projects, as: :project %>

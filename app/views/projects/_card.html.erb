@@ -1,9 +1,7 @@
-<%= link_to "Edit project below", edit_project_path(project), class: "rounded-md px-3.5 py-2.5 bg-teal-800 text-white" if admin_authenticated? %>
-
 <div id="<%= dom_id(project) %>" class="rounded-t-lg shadow-xl overflow-hidden text-black shadow-2xl grid grid-cols-1 md:grid-cols-2 border border-solid border-gray-100">
   <% if project.video? %>
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/<%= project.demo_video_url %>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    <div class="desktop-frame">
+      <%= image_tag project.demo_video_url, class: 'aspect-video' %>
     </div>
   <% elsif project.demo_image.attached? %>
     <%= image_tag project.demo_image, class: 'aspect-video' %>
