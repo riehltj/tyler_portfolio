@@ -1,19 +1,13 @@
-<div id="<%= dom_id(project) %>" class="rounded-t-lg shadow-xl overflow-hidden text-black shadow-2xl grid grid-cols-1 md:grid-cols-2 border border-solid border-gray-100">
-  <% if project.video? %>
-    <div class="desktop-frame">
-      <%= image_tag project.demo_video_url, class: 'aspect-video' %>
-    </div>
-  <% elsif project.demo_image.attached? %>
-    <%= image_tag project.demo_image, class: 'aspect-video' %>
-  <% else %>
-    <p class="aspect-video text-center">No Image Attached</p>
-  <% end %>
+<div id="<%= dom_id(project) %>" class="rounded-t-lg shadow-xl overflow-hidden text-black shadow-2xl grid grid-cols-1 md:grid-cols-2 border border-solid border-gray-100 place-items-center p-4">
+  <div class="border border-teal-900 border-4 flex justify-center items-center rounded-xl m-2 aspect-video">
+    <%= image_tag project.demo_video_url, class: 'aspect-video rounded-lg' %>
+  </div>
 
   <div class="p-2 flex flex-col gap-4 w-full">
     <h2 class="text-xl text-bold"><%= project.title %></h2>
     <p class="text-xs italic"><%= project.description %></p>
     <div class="text-xs"><%= project.content %></div>
-    <div class="flex flex-wrap gap-2 mt-auto">
+    <div class="flex flex-wrap justify-center gap-2 mt-auto">
       <%= render partial: 'tech_stack_icon', collection: project.tech_stack, as: :tech_stack %>
     </div>
   </div>

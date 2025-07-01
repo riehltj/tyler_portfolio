@@ -1,0 +1,10 @@
+<% filters = ['Designed & Built', 'MVP', 'React', 'Side Project', 'Fullstack'] %>
+
+<div class="flex gap-2 mb-4 overflow-auto w-screen md:w-fit px-6 mx-auto">
+  <% filters.each do |filter| %>
+    <%= link_to filter,
+    projects_path(q: { tags_array_contains: filter }),
+    data: { turbo_frame: "projects_list" },
+    class: "px-4 py-2 border rounded hover:bg-teal-900 hover:text-white whitespace-nowrap #{'bg-teal-900 text-white' if params.dig(:q, :tags_array_contains) == filter}" %>
+  <% end %>
+</div>

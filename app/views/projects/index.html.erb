@@ -3,20 +3,49 @@
     <%= render 'shared/menu_panel' %>
   </section>
 
-  <section id="projects" class="md:w-3/4 p-12 flex flex-col items-center gap-12 justify-center">
-
+  <section id="projects" class="md:w-3/4 px-6 py-12 md:p-12 flex flex-col items-center gap-12 justify-center">
     <div class="flex flex-col gap-12 justify-between items-center">
       <h1 class="font-bold text-4xl">Professional Summary</h1>
       <p>Full Stack Ruby on Rails Engineer with deep experience building and scaling marketplace and SaaS applications. At BoxedUp, I led development of a fully functional rental marketplace using Rails, Hotwire (Turbo/Stimulus), React, and PostgreSQL. I spearheaded key product initiatives including a dynamic storefront builder, real-time API integrations, and performance improvements through UX enhancements and database query tuning. Contributed directly to $5M+ in pre-seed funding through product execution, growth experimentation, and UX-driven development. Passionate about delivering clean, user-focused features in tight collaboration with design and product teams.</p>
     </div>
 
-    <div class="flex justify-between items-center">
-      <h1 class="font-bold text-4xl">Projects/Features</h1>
-    </div>
+    <%= turbo_frame_tag "projects_list" do %>
+      <div class="flex flex-col md:flex-row justify-center gap-4 mb-12 px-6">
+        <h1 class="font-bold text-4xl">Projects/Features</h1>
 
-    <%= render partial: 'card', collection: @projects, as: :project %>
-    <% if @pagy.next.present? %>
-      <%= turbo_frame_tag :next_page, src: projects_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+        <% if params.dig(:q, :tags_array_contains).present? %>
+          <%= link_to "Clear Filters",
+          projects_path,
+          data: { turbo_frame: "projects_list" },
+          class: "px-4 py-2 border rounded hover:bg-red-700 hover:text-white whitespace-nowrap" %>
+        <% end %>
+      </div>
+
+      <%= render 'filters' %>
+      <section class="px-6">
+        <%= render partial: 'card', collection: @projects, as: :project %>
+
+      </section>
+
+      <% if @pagy.next.present? %>
+        <%= turbo_frame_tag :next_page, src: projects_path(page: @pagy.next, format: :turbo_stream), loading: :lazy %>
+      <% end %>
     <% end %>
   </section>
 </div>
+
+<% gif_filenames = %w[
+  storefront-builder.gif
+  shops-app.gif
+  inventory-tracking.gif
+  inventory-management.gif
+  infinite-scroll.gif
+  daytrip.png
+] %>
+<%= javascript_tag do %>
+  const gifUrls = <%= raw gif_filenames.map { |gif| "'#{asset_path(gif)}'" }.to_json %>;
+  gifUrls.forEach(url => {
+  const img = new Image();
+  img.src = url;
+  });
+<% end %>

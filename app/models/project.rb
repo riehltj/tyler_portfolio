@@ -10,16 +10,16 @@ class Project < ApplicationRecord
   validates :slug, uniqueness: true, allow_nil: true
 
   ALLOWED_TECH_STACK = %w[
-  Ruby
-  Rails
-  React
-  Stimulus
-  Hotwire
-  GoogleMaps
-  PostgreSQL
-  Tailwind
-  Stripe
-].freeze
+    Ruby
+    Rails
+    React
+    Stimulus
+    Hotwire
+    GoogleMaps
+    PostgreSQL
+    Tailwind
+    Stripe
+  ].freeze
 
   def video?
     demo_type == 'video'
