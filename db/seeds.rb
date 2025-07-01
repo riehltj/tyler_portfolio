@@ -121,6 +121,6 @@ Project.find_or_create_by!(title: "Personal Project – DayTrip") do |p|
   p.tech_stack = %w[Ruby Rails Hotwire Tailwind PostgreSQL Stripe Devise Stimulus]
   p.role = "Creator"
   p.category = "Personal Project"
-p.featured = false
+  p.featured = false
   p.slug = "daytrip"
 end
