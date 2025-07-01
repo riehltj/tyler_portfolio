@@ -23,7 +23,7 @@ Project.find_or_create_by!(title: "Storefront Builder") do |p|
       <li>Leveraged React for instant UI feedback and smooth form interactions.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "storefront-builder.gif"
+  p.demo_video_url = "storefront.mp4"
   p.tags = ['Designed & Built', 'Fullstack', 'React']
   p.tech_stack = %w[Ruby Rails React Tailwind Stimulus PostgreSQL]
   p.role = "Full Stack Developer"
@@ -42,7 +42,7 @@ Project.find_or_create_by!(title: "Built End-To-End E-Commerce Marketplace") do 
       <li>Identified gaps in the original designs and independently designed and implemented critical missing features.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "shops-app.gif"
+  p.demo_video_url = "end-to-end.mp4"
   p.tags = ['Fullstack', 'Design', 'MVP']
   p.tech_stack = %w[Ruby Rails React Tailwind Stimulus PostgreSQL]
   p.featured = false
@@ -58,7 +58,7 @@ Project.find_or_create_by!(title: "Inventory Tracking & Map Integration") do |p|
       <li>Streamlined logistics and reduced manual coordination through better data transparency.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "inventory-tracking.gif"
+  p.demo_video_url = "gps-tracking.mp4"
   p.tags = ['Designed & Built', 'Fullstack', 'API']
   p.tech_stack = %w[Ruby Rails Stimulus Tailwind PostgreSQL GoogleMaps]
   p.role = "Full Stack Developer"
@@ -76,7 +76,7 @@ Project.find_or_create_by!(title: "Infinite Scroll Optimization") do |p|
       <li>Improved UX by progressively loading more items via Turbo Frames.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "infinite-scroll.gif"
+  p.demo_video_url = "infinite.mp4"
   p.tags = ['Performance', 'Backend', 'Turbo']
   p.tech_stack = %w[Ruby Rails Hotwire Pagy PostgreSQL]
   p.role = "Full Stack Developer"
@@ -95,7 +95,7 @@ Project.find_or_create_by!(title: "Inventory Management Refactor") do |p|
       <li>Improved form UX for inventory editing and ensured compatibility with quote and checkout systems.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "inventory-management.gif"
+  p.demo_video_url = "inventory.mp4"
   p.tags = ['Designed & Built', 'Fullstack']
   p.tech_stack = %w[Ruby Rails Stimulus Tailwind PostgreSQL]
   p.role = "Full Stack Developer"

@@ -34,18 +34,19 @@
   </section>
 </div>
 
-<% gif_filenames = %w[
-  storefront-builder.gif
-  shops-app.gif
-  inventory-tracking.gif
-  inventory-management.gif
-  infinite-scroll.gif
-  daytrip.png
+<% mp4_filenames = %w[
+  storefront.mp4
+  end-to-end.mp4
+  gps-tracking.mp4
+  inventory.mp4
+  infinite.mp4
 ] %>
 <%= javascript_tag do %>
-  const gifUrls = <%= raw gif_filenames.map { |gif| "'#{asset_path(gif)}'" }.to_json %>;
+  const gifUrls = <%= raw mp4_filenames.map { |mp4| "'#{asset_path(mp4)}'" }.to_json %>;
   gifUrls.forEach(url => {
-  const img = new Image();
-  img.src = url;
+  const video = document.createElement('video');
+  video.src = url;
+  video.preload = 'auto';
+  video.load();
   });
 <% end %>
