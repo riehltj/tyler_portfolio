@@ -40,5 +40,6 @@
 
 # Temporary to remove cache
 /app/assets/images/shops-app.gif 
+app/assets/images/shops-app.gif
 /app/assets/images/inventory-management.gif
 /app/assets/images/inventory-tracking.gif
