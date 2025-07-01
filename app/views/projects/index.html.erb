@@ -33,20 +33,3 @@
     <% end %>
   </section>
 </div>
-
-<% mp4_filenames = %w[
-  storefront.mp4
-  end-to-end.mp4
-  gps-tracking.mp4
-  inventory.mp4
-  infinite.mp4
-] %>
-<%= javascript_tag do %>
-  const gifUrls = <%= raw mp4_filenames.map { |mp4| "'#{asset_path(mp4)}'" }.to_json %>;
-  gifUrls.forEach(url => {
-  const video = document.createElement('video');
-  video.src = url;
-  video.preload = 'auto';
-  video.load();
-  });
-<% end %>
