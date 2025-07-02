@@ -4,4 +4,3 @@
 //= link_tree ../builds
 //= link actiontext.css
 //= link application.css
-//= link tailwind.css
