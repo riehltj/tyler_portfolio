@@ -23,7 +23,7 @@ Project.find_or_create_by!(title: "Storefront Builder") do |p|
       <li>Leveraged React for instant UI feedback and smooth form interactions.</li>
     </ul>"
   p.demo_type = "video"
-  p.demo_video_url = "storefront-video.mp4"
+  p.demo_video_url = "storefront.mp4"
   p.tags = ['Designed & Built', 'Fullstack', 'React']
   p.tech_stack = %w[Ruby Rails React Tailwind Stimulus PostgreSQL]
   p.role = "Full Stack Developer"
