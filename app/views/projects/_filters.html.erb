@@ -1,7 +1,7 @@
 <% filters = ['Designed & Built', 'MVP', 'React', 'Side Project', 'Fullstack'] %>
 
-<div class="flex gap-2 mb-4 overflow-auto w-screen md:w-fit px-6 mx-auto">
-  <span class="w-6 h-full flex items-center pr-8 text-black fill-red-900"><%= lucide_icon('filter') %></span>
+<div class="flex gap-4 mb-4 overflow-auto w-screen md:w-fit px-6 mx-auto">
+  <span class="flex items-center mx-4 text-gray-600"><%= lucide_icon('filter') %></span>
   <% filters.each do |filter| %>
     <%= link_to filter,
         projects_path(q: { tags_array_contains: filter }),
@@ -10,4 +10,4 @@
   <% end %>
 </div>
 
-<h2 class="my-2 px-12"><%= "#{pluralize(@projects.count, 'Project')} Found" %></h2>
+<h2 class="my-2 px-12"><%= "#{pluralize(@pagy.count, 'Project')} Found" %></h2>
