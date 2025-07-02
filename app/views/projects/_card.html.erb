@@ -1,5 +1,5 @@
 <div id="<%= dom_id(project) %>" class="rounded-t-lg shadow-xl overflow-hidden text-black shadow-2xl grid grid-cols-1 md:grid-cols-2 border border-solid border-gray-100 place-items-center p-4">
-  <div class="border border-teal-900 border-4 flex justify-center items-center rounded-xl m-2 aspect-video">
+  <div class="border border-teal-900 border-4 flex justify-center items-center rounded-xl m-2 aspect-video w-full">
     <% if project.video? %>
       <%= video_tag project.demo_video_url,
           autoplay: true,
