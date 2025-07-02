@@ -1,17 +1,1 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* @layer components {
-  .input-default {
-    @apply block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-500;
-  }
-
-  .label-default {
-    @apply block text-sm font-medium text-gray-700 mb-1;
-  }
-
-  .card-content {
-    @apply !list-disc text-red-600;
-  }
-} */
+@import "tailwindcss";
