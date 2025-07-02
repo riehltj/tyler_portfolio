@@ -75,3 +75,4 @@ gem 'ransack'
 gem "lucide-rails", "~> 0.1.1"
 gem "ostruct"
 gem 'pagy', '~> 9.3'
+gem "tailwindcss-ruby", "~> 4.1"
